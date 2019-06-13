@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <head>
   <script>
-    function onClick() {
-      alert('Clicked');
+    function getPalindrome(string) {
+      // call your endpoint here
+    }
+
+    function runTests() {
+      const result1 = getPalindrome('abcdc');
+      const expected1 = 'abcdcba';
+      if (result1 !== expected1) {
+        console.log('test case 1 passing');
+        return `expected 'abcdcba', got ${result1}`
+      }
+
+      const result2 = getPalindrome('ababab');
+      const expected2 = 'abababa';
+      if (result2 !== expected2) {
+        console.log('test case 2 passing');
+        return `expected 'abababa', got ${result2}`
+      }
+
+      const result3 = getPalindrome('abba');
+      const expected3 = 'abba';
+      if (result3 !== expected3) {
+        console.log('test case 3 passing');
+        return `expected 'abba', got ${result3}`
+      }
+
+      const result4 = getPalindrome('abaa');
+      const expected4 = 'abaaba';
+      if (result4 !== expected4) {
+        console.log('test case 4 passing');
+        return `expected 'abaaba', got ${result4}`
+      }
+
+      return 'all tests are passing'
+    }
+
+    function handleClick() {
+      const testResult = runTests();
+      // display testResult on the page
     }
   </script>
 </head>
 <body>
-  <p>Given a string, find the shortest possible string which can be achieved by adding characters to the end of initial string to make it a palindrome and display it.</p>
-  <input id='palindrome-input' />
-  <button onclick="onClick()">generate</button>
+  <button onclick="handleClick()">Get Result</button>
   <div>
     <span id='output' />
   </div>
